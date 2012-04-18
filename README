@@ -1,0 +1,4 @@
+This is the project page for my final research project for CSCI 198. 
+I will be using the PyBrain library for constructing a neural network.
+The neural network will be used to predict future stock price given various inputs.
+
