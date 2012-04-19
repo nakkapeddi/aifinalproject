@@ -1,0 +1,10 @@
+04-19-2012 Naveen Akkapeddi <naveen.csci@gmail.com>
+
+	* CHANGELOG: Added changelog to track changes to the project.
+	* ystockquote.py: Added ystockquote library for python interface to
+	Yahoo! finance. Fixed a TypeError issue present in the original 
+	library by creating four local variables that represented ints as
+	strings. 
+
+04-18-2012 Naveen Akkapeddi <naveen.csci@gmail.com>
+	* README: Added a readme describing the project.
