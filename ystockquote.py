@@ -151,8 +151,8 @@ def get_historical_prices(symbol, start_date, end_date):
 
     str_end_date = str(int(end_date)) #create local variables to convert int date to string date (nakkapeddi) 
     str_start_date = str(int(start_date))
-    str_end_date_minus_one = str(int(end_date-1))
-    str_start_date_minus_one = str(int(start_date-1))
+    str_end_date_minus_one = str(int(end_date-100))
+    str_start_date_minus_one = str(int(start_date-100))
 
     url = 'http://ichart.yahoo.com/table.csv?s=%s&' % symbol + \
           'd=%s&' % str_end_date_minus_one[4:6] + \
