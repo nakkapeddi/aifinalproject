@@ -2,3 +2,24 @@ This is the project page for my final research project for CSCI 198.
 I will be using the PyBrain library for constructing a neural network.
 The neural network will be used to predict future stock price given various inputs.
 
+INSTALLATION
+============
+
+Unix-like OSes (i.e. Linux, Mac OS X)
+=====================================
+
+Installation instructions with easy_install:
+1) Install pybrain with easy_install pybrain. 
+2) Run aifinalproject.py with Python >= 2.7.x
+
+OR
+
+1) Install setuptools/easy_install 
+2) Install SciPY and matplotlib with easy_install: (i.e. easy_install scipy && easy_install matplotlib)
+3) Navigate to pybrain folder, then follow instructions from there. 
+
+NOTE: I have only tested this on Debian 6.0 x86. For Linux users, it might be better to use your distribution's package manager to install scipy and matplotlib.
+
+Windows
+=======
+I have not tested this on Windows. Try following the above instructions. 

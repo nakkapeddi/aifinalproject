@@ -1,3 +1,9 @@
+04-24-2012 Naveen Akkapeddi <naveen.csci@gmail.com>
+	* aifinalproject.py The training dataset will now be automatically
+	generated. Converted each item in nested list to float, then natural log
+	is taken for each item. 
+	Started building the network with 2 input neurons, 2 hidden neurons, and 1 output neuron.
+
 04-23-2012 Naveen Akkapeddi <naveen.csci@gmail.com>
 
 	* datadumper.py: Created module which will take data from Yahoo! finance 
