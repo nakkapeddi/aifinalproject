@@ -4,13 +4,8 @@ import pickle
 import math
 
 
-print """Generate dataset (historical stock data)?
-1) Yes
-2) No"""
-answer = raw_input("> ")
-
-if "1" in answer: datadumper.data_dump()
-elif "2" in answer: print 'Continuing...'
+print """Generating dataset (historical stock data)..."""
+datadumper.data_dump()
 
 myList = []
 stockFile = open('historicaldata.pickle', 'r')
@@ -21,9 +16,10 @@ while 1:
         break
 stockFile.close()
 
-priceVol = myList.pop()
-floatPriceVol = [float(integral) for integral in priceVol]
-vol = floatPriceVol.pop()
-price = floatPriceVol.pop()
-
-logPrice = math.log(price)
+for index1, row in enumerate(myList):
+	for index2, item in enumerate(row):
+		try:
+			myList[index1][index2] = (math.log(float(item)))
+		except ValueError:
+			pass
+print myList
