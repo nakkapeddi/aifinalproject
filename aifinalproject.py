@@ -36,3 +36,11 @@ print targetData
 
 myNet = buildNetwork(2, 2, 1, hiddenclass=TanhLayer, outclass=SoftmaxLayer) # Build network with 2 input neurons, 2 hidden neurons, and 1 output neuron
 print myNet['in'], myNet['hidden0'], myNet['out']
+
+myDS = SupervisedDataSet(2, 1) # Create dataset with two dimensional input, one dimensional target.
+
+for i in range(len(myList)):
+	tupleList = tuple(myList[i])
+	tupleTarget = tuple(targetData)
+	print tupleList, tupleTarget
+#	myDS.addSample(tupleList, (0,))
