@@ -31,7 +31,8 @@ targetData = []
 for index1, row in enumerate(myClonedList):
 	targetData.append(myClonedList[index1][0])
 
-#print targetData
+targetData.pop() #Pop off last element because it should be the next day's closing price.
+print targetData
 
 myNet = buildNetwork(2, 2, 1, hiddenclass=TanhLayer, outclass=SoftmaxLayer) # Build network with 2 input neurons, 2 hidden neurons, and 1 output neuron
 print myNet['in'], myNet['hidden0'], myNet['out']
