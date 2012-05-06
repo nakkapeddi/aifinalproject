@@ -34,7 +34,7 @@ stockFile.close()
 for index1, row in enumerate(myList): # For each item in every row of the nested list, convert string to float and apply natural log function
 	for index2, item in enumerate(row):
 		try:
-			myList[index1][index2] = (math.log(float(item)))
+			myList[index1][index2] = int(item)
 		except ValueError:
 			pass
 #print myList
@@ -47,8 +47,8 @@ for index1, row in enumerate(myClonedList):
 targetData.pop() #Pop off last element because it should be the next day's closing price.
 #print targetData
 
-myNet = buildNetwork(2, 2, 1, hiddenclass=TanhLayer, outclass=SoftmaxLayer) # Build network with 2 input neurons, 2 hidden neurons, and 1 output neuron
-print myNet['in'], myNet['hidden0'], myNet['out']
+myNet = buildNetwork(2, 2, 1, hiddenclass=SoftmaxLayer) # Build network with 2 input neurons, 2 hidden neurons, and 1 output neuron
+print myNet['in'], myNet['hidden0'], myNet['out'] # Debug message to confirm network setup
 
 myDS = SupervisedDataSet(2, 1) # Create dataset with two dimensional input, one dimensional target.
 
@@ -62,4 +62,5 @@ myTrainer = BackpropTrainer(myNet, myDS)
 print """This may take awhile..."""
 myTrainData, myTestData = myDS.splitWithProportion(0.25)
 print len(myTrainData), len(myTestData)
-print myTrainer.train() #TODO, setup network structure differently.
+#import pdb; pdb.set_trace() # Debugger, uncomment to run python debugger
+print myTrainer.trainUntilConvergence() #TODO, setup network structure differently.

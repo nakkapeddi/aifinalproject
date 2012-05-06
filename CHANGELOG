@@ -1,3 +1,8 @@
+05-06-2012 Naveen Akkapeddi <naveen.csci@gmail.com>
+	* Submitting final project. While the results weren't particulary 
+	robust, with a proper dataset this project can be trivially modified
+	to produce good results that can be used in a trading strategy.
+
 04-24-2012 Naveen Akkapeddi <naveen.csci@gmail.com>
 	* aifinalproject.py The training dataset will now be automatically
 	generated. Converted each item in nested list to float, then natural log
