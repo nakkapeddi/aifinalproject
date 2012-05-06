@@ -18,6 +18,7 @@ from pybrain.tools.shortcuts import buildNetwork
 from pybrain.structure import TanhLayer, SoftmaxLayer
 from pybrain.datasets import SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
+from pybrain.utilities import percentError
 
 print """Generating dataset (historical stock data)..."""
 datadumper.data_dump()
@@ -58,9 +59,18 @@ for i in enumerate(myList): #Pop off each element, then added to dataset
 for inpt, target in myDS: #display dataset structure
 	print inpt, target
 
-myTrainer = BackpropTrainer(myNet, myDS)
+myTrainer = BackpropTrainer(myNet, myDS, verbose=True)
 print """This may take awhile..."""
 myTrainData, myTestData = myDS.splitWithProportion(0.25)
-print len(myTrainData), len(myTestData)
+print "Number of training patterns: ", len(myTestData)
+print "Input and output dimensions: ", myTestData.indim, myTrainData.outdim
+print "First sample (input, target):"
+print myTrainData['input'][0], myTrainData['target'][0]
 #import pdb; pdb.set_trace() # Debugger, uncomment to run python debugger
-print myTrainer.trainUntilConvergence() #TODO, setup network structure differently.
+
+for i in range(20):
+	myTrainer.trainEpochs( 5 ) # Run the network for 5 epochs...
+	trnresult = percentError (myTestData, myTrainData)
+    	print "epoch: %4d" % myTrainer.totalepochs, \
+        "  train error: %5.2f%%" % trnresult, \
+#        "  test error: %5.2f%%" % tstresult
