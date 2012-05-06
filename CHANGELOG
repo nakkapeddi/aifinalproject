@@ -2,6 +2,10 @@
 	* Submitting final project. While the results weren't particulary 
 	robust, with a proper dataset this project can be trivially modified
 	to produce good results that can be used in a trading strategy.
+	* aifinalproject.py Fixed the main program from halting by changing 
+	the training parameters. The network is trained for 100 epochs, 5 times 
+	per epoch. Made the backprop trainer verbose to display total error
+	during the training sequence.
 
 04-24-2012 Naveen Akkapeddi <naveen.csci@gmail.com>
 	* aifinalproject.py The training dataset will now be automatically
